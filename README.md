@@ -1,11 +1,10 @@
-
-# STYLEsnap
+# STYLEsnap - The Fashion AI
 
 **AI Driven Virtual stylist in your pocket. Snap your style, get inspired.**
 
 
 ## Preview 📽️
-
+https://github.com/0xAdiyat/STYLEsnap/assets/67780459/97b85fdf-7dce-4329-a3be-a971ee8b9772
 
 
 > [!NOTE]  
