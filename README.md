@@ -60,7 +60,7 @@ Analyzer Screen         |  Uploaded Screen       |   Result Screen
 > and send a [pull request](https://github.com/0xAdiyat/STYLEsnap/pulls). I welcome and encourage all pull requests. It usually takes me within 24-48 hours to respond to any issue > or request.
 
 > [!NOTE]
-> Image credit unplash.
+> Image credit unsplash.
 
 ## Author
 @0xAdiyat
