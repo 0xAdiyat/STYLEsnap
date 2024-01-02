@@ -66,4 +66,4 @@ Analyzer Screen         |  Uploaded Screen       |   Result Screen
 @0xAdiyat
 
 <br>
-<p align="right">● <a href="#STYLEsnap">back to top</a></p>
+<p align="right">● <a href="#STYLEsnap - The Fashion AI">back to top</a></p>
