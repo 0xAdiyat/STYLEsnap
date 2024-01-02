@@ -9,7 +9,7 @@
 
 
 > [!NOTE]  
-> It is just an MVP which I created to test out the knewly google's newly launched gemini pro api model. Please feel free to `star the repository` if you want to show your support and receive notifications about major updates > in its development. Additionally, contributions are welcome. Since I completed it in a hurry, some aspects are yet to be finished, including state management, which I plan to > > add when I have some free time. 
+> It is just an MVP which I created to test out the knewly google's newly launched gemini pro api model. So, you can say it is just a quick test on my side. Please feel free to `star the repository` if you want to show your support and receive notifications about major updates during its development. Additionally, contributions are welcome.
 
 ## Screenshots
 
