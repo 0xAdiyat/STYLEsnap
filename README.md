@@ -10,7 +10,7 @@
 
 > [!NOTE]  
 > It is just an MVP which I created to test out the newly gemini pro api model by Google.To be fair you can say it is just a quick test on my side.
-
+>
 > Please feel free to `star the repository` if you want to show your support and receive notifications about major updates during its development. Additionally, contributions are welcome.
 
 ## Screenshots
