@@ -258,12 +258,9 @@ class ImageUploadSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return imageFile != null
-        ? ClipRRect(
-            borderRadius: BorderRadius.circular(16),
-            child: Image.file(
-              imageFile!,
-              fit: BoxFit.cover,
-            ),
+        ? Image.file(
+            imageFile!,
+            fit: BoxFit.cover,
           )
         : Padding(
             padding: const EdgeInsets.all(20.0)
