@@ -13,6 +13,10 @@ Meet STYLEsnap, your new AI fashion BFF who always has your best look in mind. N
 https://github.com/0xAdiyat/STYLEsnap/assets/67780459/97b85fdf-7dce-4329-a3be-a971ee8b9772
 
 
+> [!IMPORTANT]
+> ## Step-By-Step Tutorial
+> Link -> [Click Here](https://youtu.be/TemisXFWeQw?si=R4MzBV2CInvtUx7w)
+
 
 > [!NOTE]  
 > It is just an MVP which I created to test out the newly gemini pro api model by Google.To be fair you can say it is just a quick test on my side. The overall UI isn't > all that great :p as I had to finish it real quick. Sincere apology!
