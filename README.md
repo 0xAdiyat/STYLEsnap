@@ -2,6 +2,8 @@
 
 **AI Driven Virtual stylist in your pocket. Snap your style, get inspired.**
 
+![STYLEsnap Thumbnail](https://github.com/0xAdiyat/STYLEsnap/assets/67780459/a5c15b30-125e-4052-a868-9854766e620a)
+
 
 ## Description
 Meet STYLEsnap, your new AI fashion BFF who always has your best look in mind. No more outfit anxiety or endless scrolling for inspiration—STYLEsnap is here to make your style journey a breeze. Snap a photo, and let STYLEsnap analyze your body proportions, style preferences, and the occasion to curate personalized outfit recommendations that perfectly suit your unique taste. Get ready to unlock endless style possibilities and discover a wardrobe that truly reflects your best self.
