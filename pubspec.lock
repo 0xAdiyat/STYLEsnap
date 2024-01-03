@@ -87,7 +87,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_gemini:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flutter_gemini
       sha256: "3de3a1ffbd8efef8f10c65b9cc752591cc74a7d72ea1cc77e1f227a3af114ee1"

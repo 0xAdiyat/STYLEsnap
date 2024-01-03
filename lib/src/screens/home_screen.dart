@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'dart:io';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:style_snap/src/core/constants.dart';
@@ -33,88 +34,61 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<String> imageAnalyzer(String text, File image) async {
-    String result = "";
-    setState(() {
-      isAnalyzing = true;
-    });
-
-    try {
-      final value = await gemini.textAndImage(
-        text: text,
-        images: [
-          image.readAsBytesSync(),
-        ],
-      );
-
+    String result = '';
+    setState(() => isAnalyzing = true);
+    await gemini.textAndImage(
+        text: text, images: [image.readAsBytesSync()]).then((value) {
       setState(() {
         result = value!.content!.parts![0].text!;
-      });
-    } catch (e) {
-      log('textAndImageInput', error: e);
-    } finally {
-      setState(() {
         isAnalyzing = false;
       });
-    }
+      return result;
+    }).catchError((e) {
+      setState(() => isAnalyzing = false);
+      log('textAndImageInput', error: e);
+      return result;
+    });
 
     return result;
   }
 
-  Future<void> startAnalyzing() async {
+  void startAnalyzing() async {
     if (selectedOccasion.isEmpty || _imageFile == null || isAnalyzing) {
+      setState(() => showError = true);
+      return;
+    }
+    bool containsPerson = await containsSingleOrPortraitPerson(_imageFile!);
+    if (!containsPerson) {
       setState(() {
         showError = true;
+        _imageFile = null;
       });
       return;
     } else {
-      bool containsPerson = await containsSingleOrPortraitPerson(_imageFile!);
+      setState(() => showError = false);
 
-      print("contains person $containsPerson");
-
-      if (!containsPerson) {
-        setState(() {
-          showError = true;
-          _imageFile = null;
-        });
-        return;
-      } else {
-        setState(() {
-          showError = false;
-        });
-
-        String res = await imageAnalyzer(
-            "Analyze my outfit in this picture and tell me some clothing styles and necessary adjustment required that would look better in $selectedOccasion look",
-            _imageFile!);
-
-        setState(() {
-          _imageFile = null;
-        });
-
-        if (mounted) {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => ResponseScreen(response: res)));
-        }
+      String res = await imageAnalyzer(
+          "Analyze my outfit in this picture and tell some clothing styles and necessary adjustment that should be made to enhance my current style for $selectedOccasion look",
+          _imageFile!);
+      setState(() => _imageFile = null);
+      if (mounted) {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ResponseScreen(response: res)));
       }
     }
   }
 
   Future<bool> containsSingleOrPortraitPerson(File imageFile) async {
-    String result = await imageAnalyzer(
+    final result = await imageAnalyzer(
         "Analyze the image and determine if there is exactly one visible human figure present. Return TRUE if only one person is detected, and FALSE otherwise",
         imageFile);
-
-    if (!result.contains("TRUE")) {
-      setState(() {
-        isPortraitPersonImage = false;
-      });
+    if (result.contains("TRUE")) {
+      setState(() => isPortraitPersonImage = true);
     } else {
-      setState(() {
-        isPortraitPersonImage = true;
-      });
+      setState(() => isPortraitPersonImage = false);
     }
-
     return isPortraitPersonImage;
   }
 
@@ -135,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(
             width: double.infinity,
             height: MediaQuery.of(context).size.height,
-            child: ImageUploadSection(
+            child: ImageUploadScreenWidget(
               onPressed: selectImage,
               imageFile: _imageFile,
             ),
@@ -199,7 +173,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       buildOccasionChip('Casual'),
                       buildOccasionChip('Formal'),
                       buildOccasionChip('Work'),
-                      // Add more occasion chips as needed
                     ],
                   ),
                   if (showError) const SizedBox(height: 16),
@@ -249,35 +222,29 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class ImageUploadSection extends StatelessWidget {
-  final VoidCallback onPressed;
-  final File? imageFile;
-  const ImageUploadSection(
-      {super.key, required this.onPressed, required this.imageFile});
+class ImageUploadScreenWidget extends StatelessWidget {
+  final VoidCallback _onPressed;
+  final File? _imageFile;
+  const ImageUploadScreenWidget(
+      {super.key, required VoidCallback onPressed, required File? imageFile})
+      : _onPressed = onPressed,
+        _imageFile = imageFile;
 
   @override
   Widget build(BuildContext context) {
-    return imageFile != null
-        ? Image.file(
-            imageFile!,
-            fit: BoxFit.cover,
-          )
+    return _imageFile != null
+        ? Image.file(_imageFile!, fit: BoxFit.cover)
         : Padding(
             padding: const EdgeInsets.all(20.0)
                 .copyWith(bottom: MediaQuery.of(context).size.height * 0.2),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  icon: const Icon(Icons.camera_alt_outlined, size: 40),
-                  onPressed: onPressed,
-                ),
-                const SizedBox(width: 8),
-                Text(
-                  "Upload a picture (full body for best results)",
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
+                    onPressed: _onPressed,
+                    icon: const Icon(CupertinoIcons.camera)),
+                Text("Upload a picture (full body for best results",
+                    style: Theme.of(context).textTheme.bodySmall),
               ],
             ),
           );
