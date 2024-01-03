@@ -40,11 +40,11 @@ Analyzer Screen         |  Uploaded Screen       |   Result Screen
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/0xAdiyat/Dialogix.git
+   git clone https://github.com/0xAdiyat/STYLEsnap.git
    ```
 2. Install dependencies:
    ```bash
-   cd dialogix
+   cd style_snap
    flutter pub get
    ```
 3. Add your gemini pro api key in main.dart file
