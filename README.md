@@ -15,7 +15,7 @@ https://github.com/0xAdiyat/STYLEsnap/assets/67780459/97b85fdf-7dce-4329-a3be-a9
 
 > [!IMPORTANT]
 > ## Step-By-Step Tutorial
-> Link -> [Click Here](https://youtu.be/TemisXFWeQw?si=R4MzBV2CInvtUx7w)
+> Link -> [Click Here](https://youtu.be/TemisXFWeQw)
 
 
 > [!NOTE]  
