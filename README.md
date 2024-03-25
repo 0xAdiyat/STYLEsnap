@@ -1,12 +1,12 @@
 # STYLEsnap - The Fashion AI
 
-**AI Driven Virtual stylist in your pocket. Snap your style, get inspired.**
+**AI-Driven Virtual stylist in your pocket. Snap your style, get inspired.**
 
 ![STYLEsnap Thumbnail](https://github.com/0xAdiyat/STYLEsnap/assets/67780459/a5c15b30-125e-4052-a868-9854766e620a)
 
 
 ## Description
-Meet STYLEsnap, your new AI fashion BFF who always has your best look in mind. No more outfit anxiety or endless scrolling for inspiration—STYLEsnap is here to make your style journey a breeze. Snap a photo, and let STYLEsnap analyze your body proportions, style preferences, and the occasion to curate personalized outfit recommendations that perfectly suit your unique taste. Get ready to unlock endless style possibilities and discover a wardrobe that truly reflects your best self.
+Meet STYLEsnap, your new AI fashion BFF who always has your best look in mind. No more outfit anxiety or endless scrolling for inspiration—STYLEsnap is here to make your style journey a breeze. Snap a photo, and let STYLEsnap analyze your body proportions, style preferences, and occasion to curate personalized outfit recommendations that perfectly suit your unique taste. Get ready to unlock endless style possibilities and discover a wardrobe that truly reflects your best self.
 
 
 ## Preview 📽️
@@ -19,7 +19,7 @@ https://github.com/0xAdiyat/STYLEsnap/assets/67780459/97b85fdf-7dce-4329-a3be-a9
 
 
 > [!NOTE]  
-> It is just an MVP which I created to test out the newly gemini pro api model by Google.To be fair you can say it is just a quick test on my side. The overall UI isn't all that great :p as I had to finish it real quick. Sincere apology!
+> It is just an MVP that I created to test out the new Gemini pro API model by Google. To be fair you can say it is just a quick test on my side. The overall UI isn't all that great :p as I had to finish it real quick. Sincere apology!
 > 
 > Please feel free to `star the repository` if you want to show your support and receive notifications about major updates during its development. Additionally, contributions are welcome.
 
@@ -51,7 +51,7 @@ Analyzer Screen         |  Uploaded Screen       |   Result Screen
    cd style_snap
    flutter pub get
    ```
-3. Add your gemini pro api key in main.dart file
+3. Add your Gemini pro API key in main.dart file
    ```
    Gemini.init(apiKey: ApiKeys.gemini_api_key);
    ```
@@ -67,8 +67,8 @@ Analyzer Screen         |  Uploaded Screen       |   Result Screen
 > and send a [pull request](https://github.com/0xAdiyat/STYLEsnap/pulls). I welcome and encourage all pull requests. It usually takes me within 24-48 hours to respond to any issue or request.
 
 > [!NOTE]
-> At first I thought of doing things from scratch through google provided rest api. As sadly there is no official package released by google for flutter yet.
-> Then I stumbled upon this awesome package called [flutter_gemini](https://pub.dev/packages/flutter_gemini). Thus changed my mind to use it instead, as my main goal was to test the api's performance and flexibility anyway :p
+> At first I thought of doing things from scratch through the provided rest API by Google. Sadly there was no official package released by Google for Flutter yet.
+> Then I stumbled upon this awesome package called [flutter_gemini](https://pub.dev/packages/flutter_gemini). Therefore I switched my mind to making use of it instead, as my main goal was to test the API's performance and flexibility anyway :p
 > 
 > Image credit in the image & preview-video -> unsplash.com
 
