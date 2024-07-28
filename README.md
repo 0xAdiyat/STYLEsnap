@@ -2,7 +2,7 @@
 
 **AI-Driven Virtual stylist in your pocket. Snap your style, get inspired.**
 
-![STYLEsnap Thumbnail](https://github.com/0xAdiyat/STYLEsnap/assets/67780459/a5c15b30-125e-4052-a868-9854766e620a)
+![STYLEsnap Thumbnail](https://github.com/user-attachments/assets/81f301e1-bbca-4afa-b259-caba695374a1)
 
 
 ## Description
